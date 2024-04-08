@@ -4,6 +4,7 @@ import { sendVerificationEmail } from "../helper/verification-mailer.js";
 const OTPSchema = new Schema({
     email: {
         type: String,
+        isEmail: true,
         required: true,
     },
     otp: {
