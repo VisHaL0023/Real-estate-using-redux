@@ -41,7 +41,7 @@ export default function SignUp() {
             setLoading(false);
             setError(null);
             setIsOTPEnable(true);
-            // navigate("/sign-in");
+            navigate("/sign-in");
         } catch (error) {
             setLoading(false);
             setError(error.message);
