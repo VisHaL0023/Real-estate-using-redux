@@ -1,9 +1,12 @@
-const express = require('express');
+import { Router } from "express";
+import authRoutes from "./auth-routes.js";
+import { InfoController } from "../../controllers/index.js";
 
-const { InfoController } = require('../../controllers');
+const router = Router();
 
-const router = express.Router();
+router.use("/auth", authRoutes);
 
-router.get('/info', InfoController.info);
+// Checking api is live
+router.get("/info", InfoController.info);
 
-module.exports = router;
+export default router;

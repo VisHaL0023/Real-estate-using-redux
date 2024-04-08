@@ -1,14 +1,14 @@
-const { StatusCodes } = require('http-status-codes');
+import { StatusCodes } from "http-status-codes";
 
 const info = (req, res) => {
     return res.status(StatusCodes.OK).json({
         success: true,
-        message: 'API is live',
+        message: "API is live",
         error: {},
         data: {},
     });
-}
+};
 
-module.exports = {
-    info
-}
+export default {
+    info,
+};
