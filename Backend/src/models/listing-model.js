@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const listingSchema = new mongoose.Schema(
+const listingSchema = new Schema(
     {
         name: {
             type: String,
@@ -51,13 +51,13 @@ const listingSchema = new mongoose.Schema(
             required: true,
         },
         userRef: {
-            type: String,
-            required: true,
+            type: Schema.Types.ObjectId,
+            ref: "User",
         },
     },
     { timestamps: true }
 );
 
-const Listing = mongoose.model("Listing", listingSchema);
+const Listing = model("Listing", listingSchema);
 
 export default Listing;

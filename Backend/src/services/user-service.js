@@ -4,7 +4,6 @@ import { ServerConfig } from "../config/index.js";
 import bcrypt from "bcrypt";
 import jsonwebtoken from "jsonwebtoken";
 import otpGenerator from "otp-generator";
-import errorObj from "../utils/error-response.js";
 
 class UserService {
     constructor() {
@@ -45,6 +44,7 @@ class UserService {
 
                 // OTP not found for the email or not equal to otp
                 if (response.length === 0 || reqbody.otp !== response[0].otp) {
+                    // eslint-disable-next-line no-throw-literal
                     throw {
                         success: false,
                         message: "The OTP is not valid",

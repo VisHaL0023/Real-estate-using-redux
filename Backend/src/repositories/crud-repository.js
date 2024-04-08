@@ -73,7 +73,7 @@ class CrudRepository {
     // For deleting data
     async destroy(id) {
         try {
-            const response = await this.model.findByIdAndRemove(id);
+            const response = await this.model.findByIdAndDelete(id);
             return response;
         } catch (error) {
             console.log("Something went wrong in CRUD Repo");
