@@ -36,6 +36,16 @@ class ListingRepository extends CrudRepository {
             throw error;
         }
     }
+
+    async findListing(id) {
+        try {
+            const listing = await Listing.find({ userRef: id });
+            return listing;
+        } catch (error) {
+            console.log("error in listing repo", error);
+            throw error;
+        }
+    }
 }
 
 export default ListingRepository;

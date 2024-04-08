@@ -128,7 +128,7 @@ class ListingController {
 
     async getListing(req, res) {
         try {
-            const { id } = req.params.id;
+            const { id } = req.params;
             if (!id) {
                 errorObj.success = false;
                 errorObj.message = "ID is required";
