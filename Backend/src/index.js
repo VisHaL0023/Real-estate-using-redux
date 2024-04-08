@@ -2,10 +2,13 @@ import express, { json, urlencoded } from "express";
 
 import { ServerConfig, DatabaseConfig } from "./config/index.js";
 import apiRoutes from "./routes/index.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 app.use(json());
 app.use(urlencoded({ extended: true }));
+
+app.use(cookieParser());
 
 app.use("/api", apiRoutes);
 
